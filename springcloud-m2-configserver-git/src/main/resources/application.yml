@@ -1,0 +1,24 @@
+---
+server:
+  port: 8002
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/minnikanti/spring-cloudconfig
+          #username: username
+          #password: secret
+          search-paths:
+          - 'station*'
+          repos:
+            pref:
+              pattern:
+              - "*/pref"
+              uri: https://github.com/minnikanti/spring-cloudconfig-perf
+              search-paths:
+              - "station*"
+  jackson:
+    serialization:
+      indent-output: true

@@ -1,11 +1,13 @@
 package micorservices.demo;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RefreshScope
 public class RateController {
 	@Value("${rate}")
 	String rate;
@@ -16,7 +18,7 @@ public class RateController {
 	@Value("${tollstart}")
 	String tollstart;
 
-	//@Value("${connstring}")
+	@Value("${connstring}")
 	String connstring;
 
 	@RequestMapping("/rate")
